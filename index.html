@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="AngularQuest">
+<html ng-app="AngularQuest">
 <head>
 	<title>Angular - Data-binding</title>
 	<link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
@@ -7,16 +7,6 @@
 <body>
 	
 	<div class="card-panel black">
-
-		<!-- ng-repeat Binding -->
-		<!-- <div class="card-panel grey lighten-2" data-ng-repeat="member in griffin | orderBy:orderProp"> -->
-		<div class="griffin" data-ng-repeat="member in griffin | orderBy:orderProp">
-			<h4>
-				<!-- <span class="yellow-text text-darken-2">Binding with ng-repeat</span> -->
-				{{ member.firstname }}
-			</h4>
-			<!-- <input type="text" ng-model="message"> -->
-		</div>
 
 		<!-- Binding -->
 		<div class="card-panel teal lighten-2">
@@ -55,6 +45,21 @@
 			<input type="text" ng-model="message" ng-init="message = 'hello'">
 			<p ng-bind="::message === 'hello'"></p>
 		</div>
+
+		<!-- ng-repeat Binding -->
+		<div class="card-panel grey lighten-2">
+			<h3>
+				<span class="red-text text-darken-2">ng-repeat Binding</span>
+			</h3>
+			<div ng-controller="griffinCtrl">
+				<div>
+					<h5 ng-repeat="member in griffin">
+						{{ member.firstname }} {{ member.lastname }}
+					</h5>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 </body>

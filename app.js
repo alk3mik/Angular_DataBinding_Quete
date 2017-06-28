@@ -2,6 +2,7 @@
 var App = angular.module('AngularQuest', []);
 
 App.controller('griffinCtrl', ['$scope', function ($scope) {
+  
   $scope.griffin = [
     { "firstname": "Peter", "lastname": "Griffin" },
     { "firstname": "Lois", "lastname": "Pewterschmidt" },
@@ -11,5 +12,4 @@ App.controller('griffinCtrl', ['$scope', function ($scope) {
     { "firstname": "Brian", "lastname": "Griffin" }
   ];
 
-  // $scope.showPeople = true;
 }]);
