@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html data-ng-app="AngularQuest">
+<head>
+	<title>Angular - Data-binding</title>
+	<link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
+</head>
+<body>
+	
+	<div class="card-panel black">
+
+		<!-- ng-repeat Binding -->
+		<!-- <div class="card-panel grey lighten-2" data-ng-repeat="member in griffin | orderBy:orderProp"> -->
+		<div class="griffin" data-ng-repeat="member in griffin | orderBy:orderProp">
+			<h4>
+				<!-- <span class="yellow-text text-darken-2">Binding with ng-repeat</span> -->
+				{{ member.firstname }}
+			</h4>
+			<!-- <input type="text" ng-model="message"> -->
+		</div>
+
+		<!-- Binding -->
+		<div class="card-panel teal lighten-2">
+			<h3>
+				<span class="white-text text-darken-2">Binding</span>
+			</h3>
+			<input type="text" ng-model="message">
+		</div>
+
+		<!-- Binding Using Brackets -->
+		<div class="card-panel light-green lighten-1">
+			<h3><span class="blue-text text-darken-2">Binding Using Brackets</span></h3>
+			<input type="text" ng-model="message">
+			<p>{{ message }}</p>
+		</div>
+
+		<!-- Binding Using ng-bind -->
+		<div class="card-panel orange lighten-1">
+			<h3>
+				<span class="white-text text-darken-2">Binding Using ng-bind</span>
+			</h3>
+			<h4 ng-bind="'Binding ' + message"></h4>
+			<input type="text" ng-model="message" ng-init="message = 'hello'">
+			<p ng-bind="message"></p>
+			<p ng-bind="message + message"></p>
+			<p ng-bind="::message === 'hello'"></p>
+			<p ng-bind="1 + 2"></p>
+		</div>
+
+		<!-- One-Time Binding -->
+		<div class="card-panel yellow lighten-1">
+			<h3>
+				<span class="blue-text text-darken-2">One-Time Binding</span>
+			</h3>
+			<h4 ng-bind="'Binding ' + message"></h4>
+			<input type="text" ng-model="message" ng-init="message = 'hello'">
+			<p ng-bind="::message === 'hello'"></p>
+		</div>
+	</div>
+
+</body>
+	<script type="text/javascript" src=node_modules/angular/angular.min.js></script>
+	<script type="text/javascript" src=node_modules/jquery/dist/jquery.min.js></script>
+	<script type="text/javascript" src=node_modules/materialize-css/dist/js/materialize.min.js></script>
+	<script type="text/javascript" src=app.js></script>
+</html>
